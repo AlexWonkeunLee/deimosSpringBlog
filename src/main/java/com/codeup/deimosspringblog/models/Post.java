@@ -12,6 +12,7 @@ public class Post {
     @Column(nullable = false)
     private String body;
 
+
     public Post(){};
 
     public Post(long id, String title, String body){

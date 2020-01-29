@@ -50,7 +50,6 @@ public class PostController{
 
     @PostMapping(path = "/posts/edit")
     public String editted(@RequestParam(name = "editTitle") String name, @RequestParam(name = "editBody") String body, @RequestParam(name = "editId") String id){
-        postDao.deleteById(Long.parseLong(id));
         Post post = new Post(Long.parseLong(id), name, body);
         postDao.save(post);
         return "redirect:/posts/index";
