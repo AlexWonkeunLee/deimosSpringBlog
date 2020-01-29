@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+    <h1>Edit post here</h1>
+    <form th:action="@{'/posts/edit'}" method="post">
+        <input id="editId" name="editId" type="hidden" th:value="${editPost.getId()}">
+        <div>
+            <label for="editTitle">Title</label>
+            <input id="editTitle" name="editTitle" type="text" th:placeholder="${editPost.getTitle()}">
+        </div>
+        <div>
+            <label for="editBody">Body</label>
+            <textarea id="editBody" name="editBody" th:placeholder="${editPost.getBody()}"></textarea>
+        </div>
+        <button type="submit">Edit</button>
+
+    </form>
+
+    <form th:action="@{'/posts/delete'}" method="post">
+        <input id="id" name="id" type="hidden" th:value="${editPost.getId()}">
+        <button type="submit">Delete</button>
+    </form>
+</body>
+</html>
