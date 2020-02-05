@@ -1,5 +1,6 @@
 package com.codeup.deimosspringblog.models;
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table (name = "posts")
@@ -11,6 +12,8 @@ public class Post {
     private String title;
     @Column(nullable = false)
     private String body;
+    @ManyToMany(mappedBy = "posts")
+    private List<User> users;
 
 
     public Post(){};
